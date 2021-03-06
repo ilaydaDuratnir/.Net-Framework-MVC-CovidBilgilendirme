@@ -1,0 +1,1 @@
+# .Net-Framework-MVC-CovidBilgilendirme
