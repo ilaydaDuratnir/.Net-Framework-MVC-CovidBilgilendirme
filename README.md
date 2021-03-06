@@ -7,7 +7,7 @@
 </ul>
 <hr>
 <h2>Covid-19 Türkiye Genel Tablo</h2>
-<img src = "./img/Anasayfa.PNG" width = 800 height = 500></img></br>
+<img src = "./img/CovidGenelTablo.PNG" width = 800 height = 500></img></br>
 <hr>
 <h2>Hakkımızda</h2>
 <img src = "./img/Hakkımızda.PNG" width = 800 height = 500></img></br>
@@ -16,12 +16,8 @@
 <img src = "./img/TestYap.PNG" width = 800 height = 500></img></br>
 <h4>Test Sonucu</h4></br>
 Test sonucu bulurken ML.net kullanılmıştır.</br>
-<ul>
-<li><strong>Pozitif </strong></br>
-<img src = "./img/PozitifSonuc.PNG"  width = 500 height = 500></img></br></li>
-<li><strong>Negatif </strong></br>
-<img src = "./img/NegatifSonuc.PNG" width = 500 height = 500></img></br></li>
-</ul>
+<strong>------------------------------Pozitif--------------------------------------------------------------------Negatif----------------------------------</strong></br>
+<img src = "./img/TestSonuc.jpeg"></img></br>
 <hr>
 <h2>Sık Sorulanlar</h2>
 <img src = "./img/SıkSorulanSorular.PNG" width = 800 height = 500></img></br>
