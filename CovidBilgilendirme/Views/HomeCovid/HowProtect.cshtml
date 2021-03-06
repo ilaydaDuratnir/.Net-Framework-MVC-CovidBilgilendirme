@@ -1,0 +1,30 @@
+﻿@using CovidBilgilendirme.Models.classes
+@model List<Protection>
+
+<div class="cases">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="titlepage text_align_center ">
+                    <h2>Nasıl Korunuruz !!!</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row d_flex">
+            @foreach (var item in Model)
+            {
+                <div class=" col-md-4">
+                    <div class="latest text_align_center">
+                        <figure><img src="@item.ImageUrl" style="width:110px;height:110px" alt="#" /></figure>
+                        <div class="nostrud">
+                            <h3>@item.Title</h3>
+                            <p style="height:230px">
+                                @item.Description
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

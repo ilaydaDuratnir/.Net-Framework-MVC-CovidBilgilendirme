@@ -1,0 +1,79 @@
+﻿body {
+    background-color: #eee;
+}
+
+table th, table td {
+    text-align: center;
+}
+
+table tr:nth-child(even) {
+    background-color: #BEF2F5
+}
+
+.pagination li:hover {
+    cursor: pointer;
+}
+
+.pictureStyle {
+    width: 150px;
+    height: 150px
+}
+
+.picture {
+    width: 100px;
+    height: 100px
+}
+
+.textBold {
+    font-weight: bold
+}
+
+.leftSpace {
+    margin-left: 10px
+}
+
+.same {
+    display: inline-flex
+}
+
+.selectWidht {
+    width: 1002px
+}
+
+.labelCss {
+    font-weight: bold;
+    color: black
+}
+
+.black {
+    color: black
+}
+
+.imageLabel {
+    font-weight: bold;
+    color: black;
+    clear: both;
+    float: left;
+    margin-right: 10px
+}
+
+.warningTitle {
+    color: red;
+    font-weight: bold;
+    border-style: inset
+}
+
+.warningDescription {
+    color: darkred;
+    font-weight: bold;
+    border-style: inset;
+}
+
+.addButton {
+    font-weight: bold;
+    margin-left: 10px
+}
+
+.title {
+    width: 10%
+}

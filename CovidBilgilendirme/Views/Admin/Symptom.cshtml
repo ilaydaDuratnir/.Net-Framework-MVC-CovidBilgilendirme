@@ -1,0 +1,43 @@
+﻿@model CovidBilgilendirme.Models.classes.Symptom
+
+@{
+    ViewBag.Title = "Symptom";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <h3 class="page-header"><i class="fa fa-laptop"></i>Belirtiler</h3>
+        <ol class="breadcrumb">
+            <li><i class="fa fa-home"></i><a href="/Admin/Index/">Home</a></li>
+            <li><i class="fa fa-laptop"></i>Belirtiler</li>
+        </ol>
+    </div>
+</div>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th class="title"><i class="icon_pencil-edit"></i> Başlık</th>
+                <th><i class="icon_image"></i> Fotoğraf</th>
+                <th class="title"><i class="fa fa-medkit"></i>Yaygın Belirtiler</th>
+                <th><i class="fas fa-capsules"></i> Nadir Belirtiler</th>
+                <th><i class="fas fa-ambulance"></i> Ciddi Belirtiler</th>
+                <th class="title"><i class="fa fa-warning"></i> Uyarı Başlığı</th>
+                <th><i class="icon_pens"></i> Uyarı Açıklaması</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr class="success">
+                <td>@Model.Title</td>
+                <td><img src="@Model.ImgUrl" class="picture" /></td>
+                <td>@Model.MostCommon</td>
+                <td>@Model.Rare</td>
+                <td>@Model.Serious</td>
+                <td>@Model.WarningTitle</td>
+                <td>@Model.WarningLetter</td>
+            </tr>
+        </tbody>
+    </table>
+    <a class="btn btn-primary textBold" href="/Admin/GetSymptom/@Model.ID">Güncelle<i class="icon_refresh leftSpace"></i></a>

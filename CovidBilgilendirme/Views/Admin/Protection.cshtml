@@ -1,0 +1,43 @@
+﻿@using CovidBilgilendirme.Models.classes
+@model List<Protection>
+
+@{
+    ViewBag.Title = "Protection";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="row">
+    <div class="col-lg-12">
+        <h3 class="page-header"><i class="fa fa-laptop"></i>Nasıl Korunuruz</h3>
+        <ol class="breadcrumb">
+            <li><i class="fa fa-home"></i><a href="~/Admin/Index/">Home</a></li>
+            <li><i class="fa fa-laptop"></i>Nasıl Korunuruz</li>
+        </ol>
+    </div>
+</div>
+
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th class="title"><i class="icon_pencil-edit"></i> Başlık</th>
+            <th><i class="fas fa-head-side-mask"></i> Fotoğraf</th>
+            <th><i class="icon_documents_alt"></i> Açıklama</th>
+            <th><i class="icon_cogs"></i> Edit</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var protection in Model)
+        {
+            <tr class="success">
+                <td>@protection.Title</td>
+                <td><img src="@protection.ImageUrl" class="picture" /></td>
+                <td>@protection.Description</td>
+                <td><a class="btn btn-primary textBold" href="/Admin/GetProtection/@protection.ID">Güncelle<i class="icon_refresh leftSpace"></i></a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+

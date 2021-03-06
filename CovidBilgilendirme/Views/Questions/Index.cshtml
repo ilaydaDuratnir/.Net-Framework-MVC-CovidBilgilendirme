@@ -1,0 +1,56 @@
+﻿@model List<CovidBilgilendirme.Models.classes.Soru>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script>
+
+    $(function () {
+        $("div[data-toggle=collapse]").click(function () {
+            $(this).children('span').toggleClass("fa-chevron-down fa-chevron-up");
+        });
+    })
+
+</script>
+
+
+<div class="container">
+    <div class="row mb-3 pd-l-2">
+        <div class="col-md-12">
+            <div class="titlepage text_align_center ">
+                <br /><br /><br /><br /><br />
+                <span class="fa fa-question-circle fa-3x" style="color:#353d47;"></span>
+                <h2>SIKÇA SORULAN SORULAR</h2>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+
+
+        <ul id="accordion" class="col-sm-6 col-md-12">
+            @{
+                for (int i = 0; i < Model.Count; i++)
+                {
+                    <li>
+                        <div class="collapsed" data-toggle="collapse" data-target="#@i" aria-expanded="false" aria-controls="@i">
+                            @Model[i].SoruBaslik
+                            <span class="fa fa-chevron-down fa-1x pull-right" style="color:crimson;"></span>
+                        </div>
+                        <div id="@i" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                            <div class="card-body">
+                                @Model[i].SoruIcerik
+                            </div>
+                        </div>
+                    </li>
+                }
+            }
+        </ul>
+    </div>
+</div>
+

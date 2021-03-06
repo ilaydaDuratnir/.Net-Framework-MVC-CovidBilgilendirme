@@ -1,0 +1,52 @@
+﻿@model CovidBilgilendirme.Models.classes.AboutUs
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="~/Content/css/About/AboutEmployee.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#covidHakkında").click(function () {
+                $(".covidAbout").toggle();
+            });
+        });
+    </script>
+</head>
+<body class="main-layout inner_page">
+    <div class="about top">
+        <div class="container_width">
+            <div class="row d_flex">
+                <div class="col-md-7">
+                    <div class="titlepage text_align_left">
+                        <h2>@Model.Title</h2>
+                        <p>
+                            @Model.Description
+                        </p>
+                        <a class="read_more" id="covidHakkında">Covid19 Hakkında</a>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="about_img text_align_center">
+                        <figure><img src="@Model.ImageUrl" alt="#" id="covidImg" style="width:400px;height:400px" /></figure>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- CovidAbout -->
+    @Html.Action("CovidAbout", "About")
+    <!-- CovidAbout END-->
+    <!-- Employee -->
+    @Html.Action("Employe", "About")
+    <!-- Employee END-->
+</body>
+</html>
+
+

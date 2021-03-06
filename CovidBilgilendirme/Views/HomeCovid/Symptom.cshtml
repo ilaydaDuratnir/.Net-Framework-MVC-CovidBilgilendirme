@@ -1,0 +1,32 @@
+﻿@model CovidBilgilendirme.Models.classes.Symptom
+
+<div class="coronata">
+    <div class="container">
+        <div class="row d_flex grid">
+            <div class="col-md-7">
+                <div class="coronata_img text_align_center">
+                    <figure id="symptomİmage"><img src="@Model.ImgUrl" alt="#" /></figure>
+                </div>
+                <div class="alert alert-success hoverAlert" role="alert">
+                    <h4 class="alert-heading"><strong>@Model.WarningTitle</strong></h4>
+                    <span class="fa fa-h-square" style="font-size:48px;color:red"></span>
+                    <span class="fa fa-ambulance ambulance" style="font-size:48px;color:red"></span>
+                    <p> @Model.WarningLetter</p>
+                </div>
+            </div>
+            <div class="col-md-5 oder1">
+                <div class="titlepage text_align_left">
+                    <h2>@Model.Title</h2>
+                    <p>
+                        <strong class="symptom"> En yaygın semptomlar :</strong><br />
+                        @Model.MostCommon<br />
+                        <strong class="symptom">Daha seyrek görülen semptomlar :</strong> <br />
+                        @Model.Rare<br />
+                        <strong class="symptom">Ciddi semptomlar :</strong> <br />
+                        @Model.Serious
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

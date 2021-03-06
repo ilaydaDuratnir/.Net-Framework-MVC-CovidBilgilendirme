@@ -1,0 +1,46 @@
+﻿@model CovidBilgilendirme.Models.classes.Symptom
+
+@{
+    ViewBag.Title = "GetSymptom";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <h3 class="page-header"><i class="fa fa-laptop"></i>Test Güncelleme</h3>
+        <ol class="breadcrumb">
+            <li><i class="fa fa-home"></i><a href="~/Admin/Index/">Home</a></li>
+            <li><i class="fa fa-laptop"></i>Test Güncelleme</li>
+        </ol>
+    </div>
+</div>
+
+@using (Html.BeginForm("UpdateSymptom", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <br />
+    @Html.HiddenFor(x => x.ID)
+
+    @Html.LabelFor(x => x.Title, new { @class = "labelCss" })
+    @Html.TextBoxFor(x => x.Title, new { @class = "form-control black" })
+    <br />
+    @Html.LabelFor(x => x.MostCommon, new { @class = "labelCss" })
+    @Html.TextBoxFor(x => x.MostCommon, new { @class = "form-control black" })
+    <br />
+    @Html.LabelFor(x => x.Rare, new { @class = "labelCss" })
+    @Html.TextBoxFor(x => x.Rare, new { @class = "form-control black" })
+    <br />
+    @Html.LabelFor(x => x.Serious, new { @class = "labelCss" })
+    @Html.TextBoxFor(x => x.Serious, new { @class = "form-control black" })
+    <br />
+    @Html.LabelFor(x => x.WarningTitle, new { @class = "labelCss" })
+    @Html.TextBoxFor(x => x.WarningTitle, new { @class = "form-control warningDescription" })
+    <br />
+    @Html.LabelFor(x => x.WarningLetter, new { @class = "labelCss" })
+    @Html.TextBoxFor(x => x.WarningLetter, new { @class = "form-control warningDescription"})
+    <br />
+    @Html.LabelFor(x => x.ImgUrl, new { @class = "imageLabel" })
+    @Html.TextBoxFor(x => x.ImgUrl, new { @class = "form-group", type = "file" })
+    <button class="btn btn-success textBold">Belirti Güncelle</button>
+}
+
+

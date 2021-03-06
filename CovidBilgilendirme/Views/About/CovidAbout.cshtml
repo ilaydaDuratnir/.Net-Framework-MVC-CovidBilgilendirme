@@ -1,0 +1,22 @@
+﻿@model CovidBilgilendirme.Models.classes.CovidAbout
+
+<div class="about covidAbout" style="margin-top:12px;display:none">
+    <div class="container_width">
+        <div class="row d_flex">
+            <div class="col-md-7">
+                <div class="titlepage text_align_left">
+                    <h2>@Model.CovidTitle</h2>
+                    <p>
+                        @Model.CovidDescription
+                    </p>
+
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="about_img text_align_center">
+                    <figure><img src="@Model.CovidImageUrl" alt="#" id="covidImg" style="width:400px;height:400px" /></figure>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

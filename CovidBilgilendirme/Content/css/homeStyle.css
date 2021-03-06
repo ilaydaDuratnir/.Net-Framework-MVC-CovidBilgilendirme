@@ -1,0 +1,40 @@
+﻿.göster {
+    display: none;
+    background: none;
+}
+
+.cardTitle {
+    font-weight: bold;
+    color: #ea1973;
+}
+
+.zoom:hover {
+    transform: scale(1.5);
+    transform-origin: right; 
+}
+
+.geeks:hover img {
+    transform: scale(1.1);
+}
+
+.rules1{
+    display:none;
+}
+
+.rulesTitle{
+    display:none;
+}
+
+.ambulance{
+    display:none;
+}
+
+.hoverAlert {
+    display: none;
+    text-align: center;
+    color: red;
+}
+
+
+
+

@@ -1,0 +1,108 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<!-- body -->
+<head>
+    <link href="~/Content/css/homeStyle.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="~/Content/js/Home.js"></script>
+</head>
+
+<body class="main-layout">
+    <!-- top -->
+    <div class="full_bg">
+        <!-- header inner -->
+        <div class="section">
+            <!-- carousel code -->
+            <div id="banner1" class="carousel slide slider_main">
+                <ol class="carousel-indicators ">
+                    <li data-target="#banner1" data-slide-to="0" class="indicator-li-1">01</li>
+                    <li data-target="#banner1" data-slide-to="1" class="">02</li>
+                    <li data-target="#banner1" data-slide-to="2" class="active">03</li>
+                </ol>
+                <div class="carousel-inner">
+                    <!-- stay at home -->
+                    <div class="carousel-item active">
+                        <div class="carousel-caption cuplle">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <div class="photog">
+                                            <h1>Evde Hayat Var<br /></h1>
+                                            <a class="read_more" href="/HomeCovid/CovidTable/">Covid-19 Genel Tablo</a>
+                                            <a class="read_more" href="/About/Index/">Hakkımızda</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- put on your mask -->
+                    <div class="carousel-item">
+                        <div class="carousel-caption cuplle">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <div class="photog">
+                                            <h1 class="maske">Maskeni Tak</h1>
+                                            <a class="read_more" href="/HomeCovid/CovidTable/">Covid-19 Genel Tablo</a>
+                                            <a class="read_more" href="/HomeCovid/Index/">Hakkımızda</a>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="card göster" style="width: 18rem;">
+                                            <img class="card-img-top" src="~/Content/images/maskeniTak.jpg" alt="Card image cap" style="border-radius:20px">
+                                            <div class="card-body">
+                                                <h6 class="card-title cardTitle"> Maskemizi Nasıl Takmalıyız ?</h6>
+                                                <p class="card-text">
+                                                    <ul class="list-group" style="font-size:12px">
+                                                        <li class="list-group-item list-group-item-danger font-weight-bold">Maskeyi takmadan önce eller en az 20 saniye, su ve normal sabunla yıkanır.</li>
+                                                        <li class="list-group-item list-group-item-secondary font-weight-bold">Maskenin katlı kısmı dış tarafta kalacak şekilde tutulur.</li>
+                                                        <li class="list-group-item list-group-item-success font-weight-bold">Metal şerit burun köprüsünün zerine gelecek şekilde takılır.</li>
+                                                    </ul>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- controls -->
+                <a class="carousel-control-prev" href="#banner1" role="button" data-slide="prev">
+                    <i class="fa fa-angle-left" aria-hidden="true"></i>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#banner1" role="button" data-slide="next">
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 14 rules -->
+    @Html.Action("Rules", "HomeCovid")
+    <!-- 14 rules end -->
+    <!-- symptoms -->
+    @Html.Action("Symptom", "HomeCovid")
+    <!-- symptoms end -->
+    <!-- news -->
+    @Html.Action("News", "HomeCovid")
+    <!--news end-->
+    <!--what do the doctors say-->
+    @Html.Action("DoctorSay", "HomeCovid")
+    <!--what do the doctors say end-->
+    <!-- how to protect -->
+    @Html.Action("HowProtect", "HomeCovid")
+    <!-- how to protect end -->
+
+</body>
+</html>
+ 

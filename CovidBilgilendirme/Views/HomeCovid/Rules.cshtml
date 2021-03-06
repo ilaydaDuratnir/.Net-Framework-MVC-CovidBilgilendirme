@@ -1,0 +1,29 @@
+﻿@model CovidBilgilendirme.Models.classes.Law
+
+<div class="about">
+    <div class="container_width">
+        <div class="row d_flex">
+            <div class="col-md-7">
+                <div class="titlepage text_align_left">
+                    <h2>@Model.Title</h2>
+                    <p class="rules">
+                        @Model.Description
+                    </p>
+                    <p class="rules1">
+                        <span class="fa fa-exclamation-circle rulesTitle" style="font-size:100px;color:red" aria-hidden="true"></span><br />
+                        <strong class="rulesTitle">@Model.WarningTitle</strong><br />
+                        @Model.WarningDescription
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="about_img text_align_center">
+                    <figure>
+                        <img class="zoom" src="@Model.Image" alt="#" style="width:500px;height:300px" />
+                    </figure>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,44 @@
+﻿@using CovidBilgilendirme.Models.classes
+@model List<Law>
+
+@{
+    ViewBag.Title = "Rules";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="row">
+    <div class="col-lg-12">
+        <h3 class="page-header"><i class="fa fa-laptop"></i>14-Kural</h3>
+        <ol class="breadcrumb">
+            <li><i class="fa fa-home"></i><a href="/Admin/Index/">Home</a></li>
+            <li><i class="fa fa-laptop"></i>14-Kural</li>
+        </ol>
+    </div>
+</div>
+
+@foreach (var rule in Model)
+{
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th class="title"><i class="icon_pencil-edit"></i> Başlık</th>
+                <th><i class="icon_documents_alt"></i> Açıklama</th>
+                <th><i class="icon_image"></i> Fotoğraf</th>
+                <th class="title"><i class="fa fa-warning"></i> Uyarı Mesajı</th>
+                <th class="title"><i class="icon_pens"></i> Uyarı Başlığı</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr class="success">
+                <td>@rule.Title</td>
+                <td>@rule.Description</td>
+                <td><img src="@rule.Image" class="picture" /></td>
+                <td>@rule.WarningDescription</td>
+                <td>@rule.WarningTitle</td>
+            </tr>
+        </tbody>
+    </table>
+    <a class="btn btn-primary textBold" href="/Admin/GetRule/@rule.ID">Güncelle<i class="icon_refresh leftSpace"></i></a>
+}

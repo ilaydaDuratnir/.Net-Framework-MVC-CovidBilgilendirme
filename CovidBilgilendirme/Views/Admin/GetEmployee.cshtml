@@ -1,0 +1,36 @@
+﻿@model CovidBilgilendirme.Models.classes.Employe
+
+@{
+    ViewBag.Title = "GetEmployee";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <h3 class="page-header"><i class="fa fa-laptop"></i>Çalışan Güncelleme</h3>
+        <ol class="breadcrumb">
+            <li><i class="fa fa-home"></i><a href="~/Admin/Index/">Home</a></li>
+            <li><i class="fa fa-laptop"></i>Çalışan Güncelleme</li>
+        </ol>
+    </div>
+</div>
+
+@using (Html.BeginForm("UpdateEmployee", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <br />
+    @Html.HiddenFor(x => x.ID)
+
+    @Html.LabelFor(x => x.EmployeName, new { @class = "labelCss"})
+    @Html.TextBoxFor(x => x.EmployeName, new { @class = "form-control black"})
+    <br />
+    @Html.LabelFor(x => x.EmployeJob, new { @class = "labelCss" })
+    @Html.TextBoxFor(x => x.EmployeJob, new { @class = "form-control black"})
+    <br />
+    @Html.LabelFor(x => x.Description, new { @class = "labelCss" })
+    @Html.TextAreaFor(x => x.Description, 4, 1, new { @class = "form-control black"})
+    <br />
+    @Html.LabelFor(x => x.ImageUrl, new { @class = "imageLabel"})
+    @Html.TextBoxFor(x => x.ImageUrl, new { @class = "form-group", type = "file" })
+    <button class="btn btn-success textBold">Hakkımızda Güncelle</button>
+}
+

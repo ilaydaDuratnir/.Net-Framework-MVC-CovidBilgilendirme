@@ -1,0 +1,34 @@
+﻿@model CovidBilgilendirme.Models.classes.Protection
+
+@{
+    ViewBag.Title = "GetProtection";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <h3 class="page-header"><i class="fa fa-laptop"></i>Nasıl Korunuruz Güncelleme</h3>
+        <ol class="breadcrumb">
+            <li><i class="fa fa-home"></i><a href="index.html">Home</a></li>
+            <li><i class="fa fa-laptop"></i>Nasıl Korunuruz Güncelleme</li>
+        </ol>
+    </div>
+</div>
+
+@using (Html.BeginForm("UpdateProtection", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <br />
+    @Html.HiddenFor(x => x.ID)
+
+    @Html.LabelFor(x => x.Title, new { @class = "labelCss" })
+    @Html.TextBoxFor(x => x.Title, new { @class = "form-control black"})
+    <br />
+    @Html.LabelFor(x => x.Description, new { @class = "labelCss" })
+    @Html.TextAreaFor(x => x.Description, 4, 1, new { @class = "form-control black"})
+    <br />
+    @Html.LabelFor(x => x.ImageUrl, new { @class = "imageLabel"})
+    @Html.TextBoxFor(x => x.ImageUrl, new { @class = "form-group", type = "file" })
+    <button class="btn btn-success textBold">Kural Güncelle</button>
+}
+
+

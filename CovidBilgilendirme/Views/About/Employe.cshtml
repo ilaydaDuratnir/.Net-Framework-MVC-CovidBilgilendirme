@@ -1,0 +1,27 @@
+﻿@using CovidBilgilendirme.Models.classes
+@model List<Employe>
+
+<div class="demo">
+    <div class="container">
+        <div class="row">
+            <div id="testimonial-slider" class="owl-carousel" style="margin-bottom:15px">
+                @foreach (var employe in Model)
+                {
+                    <div class="testimonial">
+                        <span class="icon fa fa-quote-left" style="color:#ed242e"></span>
+                        <p class="description">
+                            @employe.Description
+                        </p>
+                        <div class="testimonial-content">
+                            <div class="pic">
+                                <img src="@employe.ImageUrl" alt="">
+                            </div>
+                            <h3 class="name">@employe.EmployeName</h3>
+                            <span class="title">@employe.EmployeJob</span>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

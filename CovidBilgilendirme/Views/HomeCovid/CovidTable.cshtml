@@ -1,0 +1,55 @@
+﻿@model CovidBilgilendirme.Models.classes.CovidTable
+
+@{
+    ViewBag.Title = "CovidTable";
+    Layout = null;
+}
+
+<head>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="~/Content/css/StyleSheet2.css" rel="stylesheet" />
+    <title>Covid-19 Genel Tablo</title>
+</head>
+<body>
+    <div class="content loading">
+
+        <div class="logo">
+            TÜRKİYE'de <span>Covid-19</span>
+            <a href="/HomeCovid/Index/" class="w3-spin" style="font-size:35px;text-decoration:none" >
+               &times;
+            </a>
+        </div>
+
+        <div class="total">
+            <div class="title">TOPLAM</div>
+            <div class="dataCard center" data-key="toplam_test"><span class="label">Test Sayısı</span><span class="value center">@ViewBag.SumNumberTest</span></div>
+            <div class="dataCard center" data-key="toplam_vaka"><span class="label">Vaka Sayısı</span><span class="value center">@ViewBag.SumNumberCase</span></div>
+            <div class="dataCard center" data-key="toplam_vefat"><span class="label">Vefat Sayısı</span><span class="value center">@ViewBag.SumNumberDeath</span></div>
+            <div class="dataCard detail">
+                <span class="label">Vaka Detayları</span>
+                <div class="items">
+                    <span class="value" data-key="hastalarda_zaturre_oran" label="Zaturre Oranı">Zaturre Oranı : % @Model.RatePneumonia</span>
+                    <span class="value" data-key="agir_hasta_sayisi" label="Ağır Hasta">Ağır Hasta : @ViewBag.SumNumberSeriouslyIll </span>
+                    <span class="value" data-key="toplam_iyilesen" label="İyileşen">İyileşen : @ViewBag.SumNumberHealing</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="today">
+            <div class="title "><span>BUGÜN</span> <span class="date"></span></div>
+            <div class="dataCard center" data-key="gunluk_test"><span class="label">Test Sayısı</span><span class="value center">@Model.NumberTest</span></div>
+            <div class="dataCard center" data-key="gunluk_vaka"><span class="label">Vaka Sayısı</span><span class="value center">@Model.NumberCase</span></div>
+            <div class="dataCard center" data-key="gunluk_vefat"><span class="label">Vefat Sayısı</span><span class="value center">@Model.NumberDeath</span></div>
+            <div class="dataCard center" data-key="gunluk_iyilesen"><span class="label">İyileşen Sayısı</span><span class="value center">@Model.NumberHealing</span></div>
+        </div>
+
+        <div class="chart">
+
+            <img src="https://cdn.bursahakimiyet.com.tr/haber/2020/03/14/342284-81-ile-genelge-gonderildi-iste-yeni-corona-virus-tedbirleri-5e6d05624b80e.png" style="width:1117px;height:575px" />
+
+        </div>
+
+    </div>
+
+</body>
+

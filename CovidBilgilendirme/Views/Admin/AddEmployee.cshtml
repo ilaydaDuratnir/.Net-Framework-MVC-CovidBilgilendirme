@@ -1,0 +1,38 @@
+﻿@model CovidBilgilendirme.Models.classes.Employe
+
+@{
+    ViewBag.Title = "AddEmployee";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <h3 class="page-header"><i class="fa fa-laptop"></i>Çalışan Ekle</h3>
+        <ol class="breadcrumb">
+            <li><i class="fa fa-home"></i><a href="/Admin/Index/">Home</a></li>
+            <li><i class="fa fa-laptop"></i>Çalışan Ekle</li>
+        </ol>
+    </div>
+</div>
+
+@using (Html.BeginForm("AddEmployee", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <br />
+    @Html.LabelFor(x => x.EmployeName, new { @class = "labelCss" })
+    @Html.TextBoxFor(x => x.EmployeName, new { @class = "form-control black"})
+    @Html.ValidationMessageFor(x => x.EmployeName,"",new { @class = "text-danger" })
+    <br />
+    @Html.LabelFor(x => x.EmployeJob, new { @class = "labelCss" })
+    @Html.TextBoxFor(x => x.EmployeJob, new { @class = "form-control black" })
+    @Html.ValidationMessageFor(x => x.EmployeJob,"", new { @class = "text-danger" })
+    <br />
+    @Html.LabelFor(x => x.Description, new { @class = "labelCss" })
+    @Html.TextAreaFor(x => x.Description, 4, 1, new { @class = "form-control black"})
+    @Html.ValidationMessageFor(x => x.Description,"", new { @class = "text-danger" })
+    <br />
+    @Html.LabelFor(x => x.ImageUrl, new { @class = "imageLabel" })
+    @Html.TextBoxFor(x => x.ImageUrl, new { @class = "form-group", type = "file" })
+    <button class="btn btn-success" style="font-weight:bold">Çalışan Ekle</button>
+}
+
+

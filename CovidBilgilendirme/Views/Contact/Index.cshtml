@@ -1,0 +1,79 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<div class="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="titlepage text_align_center">
+                    <br /><br />
+                    <h2>BİZİMLE İLETİŞİME GEÇİN</h2>
+                    <br /><br />
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <form id="request" class="main_form" action="javascript:void(0);">
+                    <div class="row">
+                        <div class="col-md-12 ">
+                            <input id="Isim" class="contactus" placeholder="İsminiz" type="text" name="adsoyad">
+                        </div>
+                        <div class="col-md-12">
+                            <input id="Konu" class="contactus" placeholder="Konu" type="text" name="konu">
+                        </div>
+                        <div class="col-md-12">
+                            <input id="Email" class="contactus" placeholder="Email" type="email" name="email">
+                        </div>
+                        <div class="col-md-12">
+                            <textarea id="Mesaj" class="textarea" placeholder="Mesajınız" type="text" name="mesaj"></textarea>
+                        </div>
+                        <div class="col-md-12">
+                            <button id="sendbtn" class="send_btn">GÖNDER</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <div class="map-responsive">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d200066.1412716063!2d26.939632172082664!3d38.417591675337825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14bbd862a762cacd%3A0x628cbba1a59ce8fe!2zxLB6bWly!5e0!3m2!1str!2str!4v1608320351801!5m2!1str!2str" width="600" height="540" frameborder="0" style="border:0; width: 100%;" allowfullscreen=""></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/Content/js/jquery.min.js"></script>
+<script src="~/Content/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
+<script src="~/Content/js/owl.carousel.min.js"></script>
+<script src="~/Content/js/custom.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $("#sendbtn").on("click", function (event) {
+            $.ajax({
+                url: "/Contact/IletisimEkle/",
+                type: "POST",
+                data: {
+                    Isim: $("#Isim").val(),
+                    Konu: $("#Konu").val(),
+                    Email: $("#Email").val(),
+                    Mesaj: $("#Mesaj").val(),
+                },
+                dataType: "json",
+                success: function (result) {
+
+                }
+            });
+
+        });
+
+    });
+
+
+</script>
+

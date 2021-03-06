@@ -1,0 +1,47 @@
+﻿@using CovidBilgilendirme.Models.classes
+@model List<Soru>
+
+<div class="protect">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="titlepage text_align_center">
+                    <h2>Sık Sorulan Sorular</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="protect_bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="owl-carousel owl-theme">
+                        @foreach (var question in Model)
+                        {
+                            <div class="item geeks">
+                                <div class="protect_box text_align_center">
+                                    <div class="desktop"style="height:510px">
+                                        <i><img src="~/Content/images/cases1.png" alt="#" style="height:auto;max-width:100%;border-radius:15px" /></i>
+                                        <h3>@question.SoruBaslik</h3>
+                                        <span>
+                                            @if (question.SoruIcerik.Length > 300)
+                                            {
+                                                @question.SoruIcerik.Substring(0, question.SoruIcerik.Substring(0,300).LastIndexOf(" "))
+                                            }
+                                            else
+                                            {
+                                                @question.SoruIcerik
+                                            }
+                                            <strong>...</strong>
+                                        </span>
+                                    </div>
+                                    <a class="read_more" href="/Questions/Index/" style="margin-bottom:20px">Devamını Oku</a>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

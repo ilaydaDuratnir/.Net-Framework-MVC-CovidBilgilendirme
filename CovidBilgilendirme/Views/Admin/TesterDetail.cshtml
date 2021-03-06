@@ -1,0 +1,104 @@
+﻿@model CovidBilgilendirme.Models.classes.TesterDetail
+
+@{
+    ViewBag.Title = "TesterDetail";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <h3 class="page-header"><i class="fa fa-laptop"></i>Detaylar</h3>
+        <ol class="breadcrumb">
+            <li><i class="fa fa-home"></i><a href="index.html">Home</a></li>
+            <li><i class="fa fa-laptop"></i>Detaylar</li>
+        </ol>
+
+    </div>
+
+</div>
+
+
+
+<table class="table table-bordered">
+
+    <thead>
+
+        <tr>
+
+            <th>Diyabet</th>
+
+            <th>Yüksek Tansiyon</th>
+
+            <th>Kemoterapi</th>
+
+            <th>Kronik Karaciğer</th>
+
+            <th>Kronik Akciğer</th>
+
+            <th>Şehir</th>
+
+            <th>Sağlık Çalışanı</th>
+
+            <th>Hastanede Bulunma</th>
+
+            <th>Hastaya Temas</th>
+
+            <th>Ateş</th>
+
+            <th>Ateş 3 Saattir Yüksek</th>
+
+            <th>Burun Akıntısı</th>
+
+            <th>Nefes Kesilmesi</th>
+
+            <th>Boğaz Ağrısı</th>
+
+            <th>İshal-Mide Bulantısı</th>
+
+        </tr>
+
+    </thead>
+
+    <tbody>
+
+        <tr>
+
+
+
+            <td>@Model.Diabetes</td>
+
+            <td>@Model.Hypertension</td>
+
+            <td>@Model.Chemotherapy</td>
+
+            <td>@Model.ChronicLiver</td>
+
+            <td>@Model.ChronicLung</td>
+
+            <td>@Model.City</td>
+
+            <td>@Model.HealthWorker</td>
+
+            <td>@Model.MedicalCenter</td>
+
+            <td>@Model.Touch</td>
+
+            <td>@Model.Fever</td>
+
+            <td>@Model.FeverHour</td>
+
+            <td>@Model.RunnyNose</td>
+
+            <td>@Model.ShortnessOfBreath</td>
+
+            <td>@Model.Sorethroat</td>
+
+            <td>@Model.Diarrhea</td>
+
+
+
+        </tr>
+
+    </tbody>
+
+</table>

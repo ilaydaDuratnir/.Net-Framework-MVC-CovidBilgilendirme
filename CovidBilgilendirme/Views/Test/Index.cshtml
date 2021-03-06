@@ -1,0 +1,226 @@
+﻿@model CovidBilgilendirmeML.Model.ModelInput
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Sign Up Form</title>
+    <link href="~/Content/css/test/material-icon/material-design-iconic-font.min.css" rel="stylesheet" />
+    <link href="~/Content/css/test/nouislider.min.css" rel="stylesheet" />
+    <link href="~/Content/css/test/test.css" rel="stylesheet" />
+</head>
+<body class="body_test">
+    <div class="main">
+        <div class="container">
+            <form asp-action="Test" method="POST" id="signup-form" class="signup-form" action="/Test/Index" style="width:1400px">
+                <div>
+                    <h3>Giriş</h3>
+                    <fieldset>
+                        <h2>Giriş </h2>
+                        <p class="desc">Sonuçlar sadece öneri niteliği taşımaktadır ve nihai bir sonuç/kesinlik içermemektedir, tavsiye niteliğindedir.</p>
+                        <div class="fieldset-content">
+                            <div class="form-row">
+                                <label class="form-label">Ad</label>
+                                <div class="form-group col-md-6">
+                                    <input type="text" name="FirstName" id="FirstName" style="width:250px" />
+                                    <span class="text-input">Ad</span>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <input type="text" name="LastName" id="LastName" />
+                                    <span class="text-input">Soyad</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="TcNo" class="form-label">T.C. Kimlik No / Yabancı No</label>
+                                <input type="text" name="TcNo" id="TcNo" />
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" name="Email" id="Email" />
+                                <span class="text-input">Örneğin :<span> ilayda@gmail.com</span></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone" class="form-label">Telefon Numarası</label>
+                                <input type="text" name="Phone" id="Phone" />
+                                <span class="text-input">Başında 0 olmadan</span>
+                            </div>
+                            <div class="form-date-group">
+                                <div class="form-group">
+                                    <label for="birt_date" class="form-label">Doğum Yılı</label>
+                                    <select id="birth_year" name="BirthYear"></select>
+                                    <span class="text-input">YYYY</span>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+
+
+
+                    <h3>Kişisel Bilgiler Ve Kronik Hastalıklar</h3>
+                    <fieldset>
+                        <h2>Kişisel Bilgiler Ve Kronik Hastalıklar</h2>
+                        <p class="desc"></p>
+                        <div class="fieldset-content">
+                            <div class="form-group">
+                                <label for="City" class="form-label">Son 14 gün içerisinde en uzun süre bulunduğunuz şehir</label>
+                                <select class="form-control" id="city" name="City">
+                                    <option value="">Seçiniz</option>
+                                </select>
+                            </div>
+
+
+
+                            <div class="health-worker">
+                                <label class="form-label" style="margin-top:10px">Sağlık Sektöründe Çalışan Birisi misiniz? (doktor, hemşire, sağlık teknisyeni vb.) </label>
+                                <div class="controls">
+                                    <input asp-for="HealthWorker" type="radio" name="HealthWorker" value="Evet">
+                                    <label asp-for="HealthWorker" class="radio">Evet</label>
+                                    <input asp-for="HealthWorker" type="radio" class="left-space" name="HealthWorker" value="Hayır" checked="checked">
+                                    <label asp-for="HealthWorker" class="radio">Hayır</label>
+                                </div>
+                            </div>
+                            <div class="diseases">
+                                <label class="form-label">Aşağıdaki Hastalıklardan Sizde Olan Varsa İşaretleyiniz.</label>
+                                <label class="lbl-container">
+                                    Kronik Akciğer Hastalığı
+                                    <input type="checkbox" name="ChronicLung" value="Evet" />
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="lbl-container">
+                                    Diyabet (Şeker) Hastalığı
+                                    <input type="checkbox" name="Diabetes" value="Evet" />
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="lbl-container">
+                                    Yüksek Tansiyon (Hipertansiyon)
+                                    <input type="checkbox" name="Hypertension" value="Evet" />
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="lbl-container">
+                                    Kronik Karaciğer Hastalığı
+                                    <input type="checkbox" name="ChronicLiver" value="Evet" />
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="lbl-container">
+                                    Kemoterapi Görüyorum
+                                    <input type="checkbox" name="Chemotherapy" value="Evet" />
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </fieldset>
+
+
+
+                    <h3>Son 14 Gün Ve Şikayetler</h3>
+                    <fieldset>
+                        <h2>Son 14 Gün Ve Şikayetler</h2>
+                        <p class="desc"></p>
+                        <div class="fieldset-content">
+                            <div class="medical-center">
+                                <label class="form-label">Son 14 gün içerisinde herhangi bir sağlık merkezinde bulundunuz mu?</label>
+                                <div class="controls">
+                                    <input asp-for="MedicalCenter" type="radio" name="MedicalCenter" value="Evet">
+                                    <label asp-for="MedicalCenter" class="radio">Evet</label>
+                                    <input asp-for="MedicalCenter" type="radio" class="left-space" name="MedicalCenter" value="Hayır" checked="checked">
+                                    <label asp-for="MedicalCenter" class="radio">Hayır</label>
+                                </div>
+                            </div>
+                            <div class="touch">
+                                <label class="form-label">Son 14 gün içerisinde solunum yolu hastalığı (nezle,grip, zatürre vb.) olan birisi ile temasınız oldu mu?</label>
+                                <div class="controls">
+                                    <input asp-for="Touch" type="radio" name="Touch" value="Evet">
+                                    <label asp-for="Touch" class="radio">Evet</label>
+                                    <input asp-for="Touch" type="radio" class="left-space" name="Touch" value="Hayır" checked="checked">
+                                    <label asp-for="Touch" class="radio">Hayır</label>
+                                </div>
+                            </div>
+                            <div class="fever">
+                                <label class="form-label">Aşağıdaki semptomlardan hangisi sizde mevcut bulunmaktadır?</label>
+                                <div class="controls">
+                                    <input asp-for="Fever" type="radio" name="Fever" value="Düşük">
+                                    <label asp-for="Fever" class="radio">Ateşim 38.0 derece altındadır. / Ateşim yok</label>
+                                    <input asp-for="Fever" type="radio" class="left-space" name="Fever" value="Orta">
+                                    <label asp-for="Fever" class="radio">Yüksek Ateş (38.0 ile 38.5 arası)</label>
+                                    <input asp-for="Fever" type="radio" class="left-space" name="Fever" value="Yüksek">
+                                    <label asp-for="Fever" class="radio">Yüksek Ateş (38.5 üzerinde)</label>
+                                </div>
+                            </div>
+                            <div class="complaints">
+                                <label class="lbl-container">
+                                    Ateşim son 3 saattir 38.5 derece üzerinde seyretmektedir.
+                                    <input type="checkbox" name="FeverHour" value="Evet" />
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="lbl-container">
+                                    Yeni Başlayan Nefes Darlığı
+                                    <input type="checkbox" name="ShortnessOfBreath" value="Evet" />
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="lbl-container">
+                                    Yeni Başlayan Boğaz Ağrısı
+                                    <input type="checkbox" name="Sorethroat" value="Evet" />
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="lbl-container">
+                                    Yeni Başlayan Burun Akıntısı
+                                    <input type="checkbox" name="RunnyNose" value="Evet" />
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="lbl-container">
+                                    Yeni Başlayan İshal,Mide Bulantısı veya Kusma
+                                    <input type="checkbox" name="Diarrhea" value="Evet" />
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <input type="submit" id="submit">
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- JS -->
+    <script src="~/Content/js/jquery.min.js"></script>
+    <script src="~/Content/js/test/vendor/jquery.validate.js"></script>
+    <script src="~/Content/js/test/vendor/additional-methods.min.js"></script>
+    <script src="~/Content/js/test/vendor/jquery.steps.min.js"></script>
+    <script src="~/Content/js/test/vendor/dobpicker.js"></script>
+    <script src="~/Content/js/test/vendor/nouislider.min.js"></script>
+    <script src="~/Content/js/test/vendor/wNumb.js"></script>
+    <script src="~/Content/js/test/city.js"></script>
+    <script src="~/Content/js/test/test.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+
+    <script>
+
+        $(document).ready(function () {
+
+            if ('@ViewBag.Sonuc' == 'Negatif') {
+                swal("Sonuç!", "Beyan ettiğiniz bilgiler doğrultusunda koronavirüs ile karşılaşmış olma ihtimaliniz düşüktür.", "success").then(okay => {
+                    if (okay) {
+                        window.location.href = "/HomeCovid/Index/";
+                    }
+                });
+            };
+
+            if ('@ViewBag.Sonuc' == 'Pozitif') {
+                swal("Sonuç!", "Beyan ettiğiniz bilgiler doğrultusunda sağlık durumunuzun yakından değerlendirilmesi için lütfen maskenizi takarak en yakın sağlık kuruluşuna başvurunuz.", "error").then(okay => {
+                    if (okay) {
+                        window.location.href = "/HomeCovid/Index/";
+                    }
+                });;
+            };
+        });
+
+
+    </script>
+
+</body>
+</html>
+
