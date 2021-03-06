@@ -16,7 +16,7 @@
 <img src = "./img/TestYap.PNG" width = 800 height = 500></img></br>
 <h4>Test Sonucu</h4>
 Test sonucu bulurken ML.net kullanılmıştır.</br>
-<strong>------------------------------Pozitif---------------------------------------------------------Negatif------------------------</strong></br>
+<strong>----------------------------Pozitif---------------------------------------------------------Negatif----------------------------</strong></br>
 <img src = "./img/TestSonuc.jpeg"></img></br>
 <hr>
 <h2>Sık Sorulanlar</h2>
